@@ -45,6 +45,12 @@ body{
     overflow-x:hidden;
 }
 
+    body.menu-open{
+    overflow:hidden;
+    height:100dvh;
+    touch-action:none;
+}
+
 
 /* ================================
    HEADER
@@ -1632,7 +1638,9 @@ nav a[href="#kontakt"]:not(.nav-button)::after{
     right:0;
 
     width:100%;
-    height:calc(100vh - 70px);
+    height:calc(100dvh - 70px);
+overflow:hidden;
+overscroll-behavior:none;
     padding:35px 22px;
 
     flex-direction:column;
@@ -2885,16 +2893,14 @@ const mobileNav = document.querySelector('nav');
 hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('open');
     mobileNav.classList.toggle('open');
-
-    document.body.style.overflow =
-        mobileNav.classList.contains('open') ? 'hidden' : '';
+    document.body.classList.toggle('menu-open');
 });
 
 mobileNav.querySelectorAll('a').forEach(link => {
     link.addEventListener('click', () => {
         hamburger.classList.remove('open');
         mobileNav.classList.remove('open');
-        document.body.style.overflow = '';
+        document.body.classList.remove('menu-open');
     });
 });
 </script>
