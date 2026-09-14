@@ -1529,6 +1529,9 @@ nav a[href="#kontakt"]:not(.nav-button)::after{
 .footer-inner a:hover{
     color:var(--cream);
 }
+    .about-photo-mobile{
+    display:none;
+}
 
 
 /* ================================
@@ -2004,14 +2007,28 @@ nav a:not(.nav-button)::after{
 }
 
 .about-photo{
-    width:calc(100% - 16px);
-    max-width:430px;
-    margin-left:16px;
+    display:none;
 }
 
-.about-photo-frame{
-    top:14px;
-    left:-14px;
+.about-photo-mobile{
+    display:block;
+    position:relative;
+    width:70%;
+    max-width:280px;
+    margin:0 auto 45px;
+}
+
+.about-photo-mobile img{
+    position:relative;
+    z-index:2;
+    display:block;
+    width:100%;
+    height:auto;
+}
+
+.about-photo-mobile .about-photo-frame{
+    top:12px;
+    left:-12px;
 }
 
 .about-content{
@@ -2733,6 +2750,11 @@ nav a:not(.nav-button)::after{
             <div class="about-label">O mně</div>
 
             <h2>Mirka<br><span>Fiebingerová</span></h2>
+
+            <div class="about-photo-mobile">
+    <div class="about-photo-frame"></div>
+    <img src="mirka.jpg" alt="Mirka Fiebingerová">
+</div>
 
             <div class="about-text">
 
