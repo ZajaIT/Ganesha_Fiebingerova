@@ -1,0 +1,2795 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ganesha kosmetické studio | Trutnov</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Aboreto&family=Figtree:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="icon" type="image/png" href="favicon.png">
+
+<style>
+
+:root{
+    --cream:#fff8f1;
+    --cream-dark:#f5eadf;
+    --wine:#9f2930;
+    --wine-dark:#742027;
+    --orange:#ed9c3e;
+    --pink:#d77ca7;
+    --text:#463633;
+    --muted:#766560;
+    --line:#d9c6b8;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--cream);
+    color:var(--text);
+    font-family:"Figtree",system-ui,sans-serif;
+    overflow-x:hidden;
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+header{
+    height:82px;
+    background:rgba(255,248,241,.97);
+    border-bottom:1px solid rgba(70,54,51,.09);
+    display:flex;
+    align-items:center;
+
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.header-inner{
+    width:min(1450px,94%);
+    height:100%;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    position:relative;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    text-decoration:none;
+}
+
+.logo img{
+    width:58px;
+    height:58px;
+    object-fit:contain;
+}
+
+nav{
+    width:100%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:0px;
+    padding-right:155px;
+}
+
+nav a{
+    text-decoration:none;
+    color:var(--text);
+
+    font-family:"Figtree",system-ui,sans-serif;
+    font-size:15px;
+    font-weight:600;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+
+    transition:color .2s ease;
+}
+
+nav a:hover{
+    color:var(--wine);
+}
+
+nav a:not(.nav-button){
+    display:flex;
+    align-items:center;
+}
+
+nav a:not(.nav-button)::after{
+    content:"";
+    width:4px;
+    height:4px;
+    margin:0 18px;
+    border-radius:50%;
+    background:var(--orange);
+    flex:0 0 auto;
+}
+
+nav a[href="#kontakt"]:not(.nav-button)::after{
+    display:none;
+}
+
+.nav-button{
+    position:absolute;
+    right:0;
+
+    background:var(--wine);
+    color:#fff !important;
+
+    padding:14px 23px;
+
+    font-family:"Figtree",system-ui,sans-serif;
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:.12em;
+    text-transform:uppercase;
+    transition:background .25s ease;
+}
+
+.nav-button:hover{
+    background:var(--wine-dark);
+    color:#fff !important;
+}
+
+
+/* ================================
+   HERO
+================================ */
+
+.hero{
+    width:100%;
+    background:var(--cream);
+    overflow:hidden;
+}
+
+.hero img{
+    display:block;
+    width:100%;
+    height:auto;
+
+
+    opacity:0;
+    transform:scale(1.025);
+
+    animation:heroIntro 1.8s ease-out .15s forwards;
+}
+
+@keyframes heroIntro{
+    from{
+        opacity:0;
+        transform:scale(1.025);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+
+/* ================================
+   SERVICES STRIP
+================================ */
+
+.services-strip{
+    width:100%;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    background:var(--cream-dark);
+    overflow:hidden;
+}
+
+.services-track{
+    min-height:66px;
+    display:flex;
+    align-items:center;
+    width:max-content;
+    white-space:nowrap;
+
+    animation:scrollServices 35s linear infinite;
+}
+
+.services-set{
+    display:flex;
+    align-items:center;
+}
+
+.service{
+    display:flex;
+    align-items:center;
+    font-family:"Aboreto","Trebuchet MS",serif;
+    font-size:15px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    color:var(--text);
+}
+
+.service::after{
+    content:"";
+    display:block;
+    width:22px;
+    height:22px;
+    margin:0 26px;
+
+    background:url("logo.png") center / contain no-repeat;
+
+    flex:0 0 auto;
+}
+
+@keyframes scrollServices{
+
+    from{
+        transform:translateX(0);
+    }
+
+    to{
+        transform:translateX(-50%);
+    }
+
+}
+
+
+/* ================================
+   INTRO / SLOGAN
+================================ */
+
+.intro{
+    padding:115px 20px 70px;
+    text-align:center;
+    background:var(--cream);
+}
+
+.intro-label{
+    color:var(--wine);
+    text-transform:uppercase;
+    font-size:10px;
+    letter-spacing:.25em;
+    font-weight:600;
+    margin-bottom:24px;
+}
+
+.intro h1{
+    max-width:1400px;
+    margin:auto;
+
+    font-family:"Aboreto","Trebuchet MS",serif;
+    font-size:clamp(36px,3.7vw,58px);
+    line-height:1.25;
+    letter-spacing:.015em;
+    font-weight:400;
+    color:var(--text);
+    text-shadow:.4px 0 currentColor;
+}
+
+.intro h1 span{
+    color:var(--wine);
+}
+
+.intro-highlight{
+    margin:30px auto 0;
+    color:var(--wine);
+
+    font-family:"Aboreto","Trebuchet MS",serif;
+    font-size:22px;
+    line-height:1.5;
+    font-weight:400;
+    letter-spacing:.03em;
+    text-shadow:.5px 0 currentColor;
+}
+
+.intro p{
+    max-width:1000px;
+    margin:32px auto 0;
+
+    color:var(--text);
+    font-size:17px;
+    line-height:1.9;
+    font-weight:400;
+}
+
+.scroll-arrow{
+    width:42px;
+    height:42px;
+    margin:42px auto 0;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    text-decoration:none;
+
+    animation:arrowMove 1.8s ease-in-out infinite;
+}
+
+.scroll-arrow span{
+    display:block;
+    width:18px;
+    height:18px;
+
+    border-right:2px solid var(--wine);
+    border-bottom:2px solid var(--wine);
+
+    transform:rotate(45deg);
+}
+
+@keyframes arrowMove{
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(9px);
+    }
+}
+
+/* ================================
+   PÉČE PODLE ČASU
+================================ */
+
+.time-care{
+    padding:20px 5% 50px;
+    background:var(--cream);
+}
+
+.time-care-head{
+    max-width:900px;
+    margin:0 auto 75px;
+    text-align:center;
+}
+
+.time-care-label{
+    margin-bottom:22px;
+
+    color:var(--wine);
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+}
+
+.time-care-head h2{
+    font-family:"Aboreto","Trebuchet MS",serif;
+    font-size:clamp(32px,3.2vw,48px);
+    line-height:1.3;
+    font-weight:400;
+    color:var(--text);
+    text-shadow:.5px 0 currentColor;
+}
+
+.time-care-head h2 span{
+    color:var(--wine);
+}
+
+.time-care-head p{
+    max-width:700px;
+    margin:25px auto 0;
+
+    font-size:16px;
+    line-height:1.8;
+    color:var(--muted);
+}
+
+
+/* ČTYŘI VARIANTY */
+
+.time-options{
+    width:min(1450px,100%);
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+}
+
+
+/* JEDNA VARIANTA */
+
+.time-option{
+    position:relative;
+    padding:0 38px 35px;
+
+    border-left:1px solid var(--line);
+}
+
+.time-option:last-child{
+    border-right:1px solid var(--line);
+}
+
+
+/* ČAS */
+
+.time-number{
+    margin-bottom:28px;
+    display:flex;
+    align-items:baseline;
+    gap:12px;
+
+    font-family:"Aboreto","Trebuchet MS",serif;
+    font-size:68px;
+    line-height:1;
+    color:var(--wine);
+}
+
+.time-number span{
+    display:inline-block;
+    margin:0;
+
+    font-family:"Figtree",system-ui,sans-serif;
+    font-size:10px;
+    font-weight:600;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+    color:var(--muted);
+}
+
+
+/* NÁZEV */
+
+.time-option h3{
+    min-height:62px;
+    margin-bottom:12px;
+
+    font-family:"Aboreto","Trebuchet MS",serif;
+    font-size:19px;
+    line-height:1.45;
+    font-weight:400;
+    color:var(--text);
+    text-shadow:.5px 0 currentColor;
+}
+
+
+/* CENA */
+
+.time-price{
+    display:inline-block;
+    margin-bottom:24px;
+    padding-bottom:5px;
+
+    border-bottom:2px solid var(--orange);
+
+    font-size:18px;
+    font-weight:600;
+    color:var(--wine-dark);
+}
+
+
+/* KRÁTKÝ POPIS */
+
+.time-description{
+    min-height:100px;
+
+    font-size:15px;
+    line-height:1.7;
+    color:var(--text);
+}
+
+
+/* CO JE NAVÍC / CO OBSAHUJE */
+
+.time-includes{
+    margin:20px 0 10px;
+
+    color:var(--wine);
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+}
+
+
+/* SEZNAM */
+
+.time-option ul{
+    list-style:none;
+}
+
+.time-option li{
+    position:relative;
+
+    padding:3px 0 3px 17px;
+
+    font-size:14px;
+    line-height:1.45;
+    color:var(--muted);
+}
+
+.time-option li::before{
+    content:"";
+    position:absolute;
+    left:0;
+    top:11px;
+
+    width:5px;
+    height:5px;
+
+    border-radius:50%;
+    background:var(--orange);
+}
+
+
+/* SPOLEČNÁ POZNÁMKA */
+
+.time-care-note{
+    max-width:900px;
+    margin:75px auto 0;
+    padding-top:38px;
+
+    border-top:1px solid var(--line);
+    text-align:center;
+}
+
+.time-care-note p{
+    font-size:16px;
+    line-height:1.8;
+    color:var(--text);
+}
+
+.time-care-final{
+    margin-top:30px;
+
+    font-family:"Aboreto","Trebuchet MS",serif;
+    font-size:23px;
+    line-height:1.5;
+    color:var(--wine);
+    text-shadow:.5px 0 currentColor;
+}
+
+/* ================================
+   MOTTO PÉČE
+================================ */
+
+.care-motto{
+    position:relative;
+    overflow:hidden;
+
+    padding:48px 25px 52px;
+
+    background:
+        linear-gradient(rgba(116,32,39,.90), rgba(116,32,39,.84)),
+        url("flowers.png") center / cover no-repeat;
+
+    text-align:center;
+    color:var(--cream);
+}
+
+.care-motto p{
+    margin:0 0 18px;
+
+    font-family:"Figtree",system-ui,sans-serif;
+    font-size:16px;
+    line-height:1.7;
+    letter-spacing:.03em;
+}
+
+.care-motto div{
+    max-width:1050px;
+    margin:auto;
+
+    font-family:"Aboreto","Trebuchet MS",serif;
+    font-size:clamp(25px,2.5vw,38px);
+    line-height:1.5;
+    font-weight:400;
+    text-shadow:.5px 0 currentColor;
+}
+
+/* ================================
+   PÉČE O PLEŤ
+================================ */
+
+.skin-care{
+    padding:90px 5% 65px;
+    background:var(--cream);
+    scroll-margin-top:82px;
+}
+
+
+/* HLAVIČKA */
+
+.skin-care-head{
+    max-width:900px;
+    margin:0 auto 50px;
+    text-align:center;
+}
+
+.skin-care-label{
+    margin-bottom:22px;
+    color:var(--wine);
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+}
+
+.skin-care-head h2{
+    font-family:"Aboreto","Trebuchet MS",serif;
+    font-size:clamp(34px,3.4vw,50px);
+    line-height:1.3;
+    font-weight:400;
+    text-shadow:.5px 0 currentColor;
+}
+
+.skin-care-head h2 span{
+    color:var(--wine);
+}
+
+.skin-care-head p{
+    max-width:680px;
+    margin:26px auto 0;
+    font-size:16px;
+    line-height:1.8;
+    color:var(--muted);
+}
+
+
+/* SPECIÁLNÍ PÉČE */
+
+.skin-feature{
+    width:min(1250px,100%);
+    margin:auto;
+    padding:42px 0;
+
+    display:grid;
+    grid-template-columns:.9fr 1.1fr;
+    gap:100px;
+
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+}
+
+.skin-feature-title{
+    padding-left:35px;
+    border-left:4px solid var(--orange);
+}
+
+.skin-feature-title span,
+.skin-options-heading span{
+    display:block;
+    margin-bottom:17px;
+
+    color:var(--wine);
+    font-size:10px;
+    font-weight:600;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+}
+
+.skin-feature-title h3,
+.skin-options-heading h3,
+.skin-small-service h3{
+    font-family:"Aboreto","Trebuchet MS",serif;
+    font-weight:400;
+    color:var(--text);
+    text-shadow:.4px 0 currentColor;
+}
+
+.skin-feature-title h3{
+    font-size:clamp(27px,2.4vw,38px);
+    line-height:1.4;
+}
+
+.skin-feature-text{
+    max-width:650px;
+}
+
+.skin-feature-text p{
+    font-size:16px;
+    line-height:1.85;
+    color:var(--text);
+}
+
+.skin-feature-text p + p{
+    margin-top:18px;
+}
+
+
+/* DALŠÍ MOŽNOSTI */
+
+.skin-options{
+    width:min(1250px,100%);
+    margin:0 auto;
+    padding:42px 0;
+
+    display:grid;
+    grid-template-columns:.9fr 1.1fr;
+    gap:100px;
+
+    border-bottom:1px solid var(--line);
+}
+
+.skin-options-heading{
+    padding-left:35px;
+    border-left:4px solid var(--orange);
+}
+
+.skin-options-heading span{
+    display:block;
+    margin-bottom:17px;
+
+    color:var(--wine);
+    font-size:10px;
+    font-weight:600;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+}
+
+.skin-options-heading h3{
+    font-family:"Aboreto","Trebuchet MS",serif;
+    font-size:clamp(27px,2.4vw,38px);
+    line-height:1.4;
+    font-weight:400;
+    color:var(--text);
+    text-shadow:.4px 0 currentColor;
+}
+
+.skin-options-text{
+    max-width:700px;
+    font-size:16px;
+    line-height:2;
+    color:var(--text);
+}
+
+.skin-options-text span{
+    display:inline-block;
+    margin:0 10px;
+    color:var(--orange);
+    font-weight:600;
+}
+
+.skin-options-content p{
+    max-width:650px;
+    padding-top:22px;
+    border-top:1px solid var(--line);
+
+    font-size:15px;
+    line-height:1.75;
+    font-weight:600;
+    color:var(--text);
+}
+
+
+/* ================================
+   ŘASY + EPILACE
+================================ */
+
+.skin-detail{
+    width:min(1250px,100%);
+    margin:0 auto;
+    padding:38px 0;
+
+    display:grid;
+    grid-template-columns:.9fr 1.1fr;
+    gap:100px;
+
+    border-bottom:1px solid var(--line);
+}
+
+.skin-detail-heading{
+    padding-left:35px;
+    border-left:4px solid var(--orange);
+}
+
+.skin-detail-heading > span{
+    display:block;
+    margin-bottom:17px;
+
+    color:var(--wine);
+    font-size:10px;
+    font-weight:600;
+    letter-spacing:.2em;
+    text-transform:uppercase;
+}
+
+.skin-detail-heading h3{
+    font-family:"Aboreto","Trebuchet MS",serif;
+    font-size:clamp(27px,2.4vw,38px);
+    line-height:1.4;
+    font-weight:400;
+    color:var(--text);
+    text-shadow:.4px 0 currentColor;
+}
+
+.skin-detail-content{
+    align-self:center;
+}
+
+.skin-detail-text{
+    max-width:700px;
+
+    font-size:16px;
+    line-height:2;
+    color:var(--text);
+}
+
+.skin-detail-text span{
+    display:inline-block;
+    margin:0 10px;
+
+    color:var(--orange);
+    font-weight:600;
+}
+
+.skin-detail-content p{
+    max-width:650px;
+    margin-top:18px;
+    padding-top:18px;
+
+    border-top:1px solid var(--line);
+
+    font-size:15px;
+    line-height:1.75;
+    color:var(--text);
+}
+
+.body-wrap-content p:first-child{
+    border-top:none;
+    padding-top:0;
+}
+
+.makeup-content p:first-child{
+    border-top:none;
+    padding-top:0;
+}
+
+/* ================================
+   MASÁŽE
+================================ */
+
+.massages{
+    padding:90px 5% 105px;
+    background:
+        linear-gradient(rgba(116,32,39,.90), rgba(116,32,39,.90)),
+        url("flowers.png") center / cover no-repeat;
+    scroll-margin-top:82px;
+}
+
+.massages-head{
+    max-width:850px;
+    margin:0 auto 60px;
+    text-align:center;
+}
+
+.massages-label{
+    margin-bottom:20px;
+
+    color:var(--orange);
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+}
+
+.massages-head h2{
+    font-family:"Aboreto","Trebuchet MS",serif;
+    font-size:clamp(34px,3.4vw,50px);
+    line-height:1.3;
+    font-weight:400;
+    color:var(--cream);
+    text-shadow:.5px 0 currentColor;
+}
+
+.massages-head h2 span{
+    color:var(--orange);
+}
+
+.massages-head p{
+    max-width:650px;
+    margin:22px auto 0;
+
+    font-size:16px;
+    line-height:1.8;
+    color:var(--cream);
+}
+
+
+/* GRID */
+
+.massage-grid{
+    width:min(1250px,100%);
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:18px;
+}
+
+
+/* první dvě */
+
+.massage-card:nth-child(1),
+.massage-card:nth-child(2){
+    grid-column:span 3;
+}
+
+
+/* spodní tři */
+
+.massage-card:nth-child(3),
+.massage-card:nth-child(4),
+.massage-card:nth-child(5){
+    grid-column:span 2;
+}
+
+
+/* KARTA */
+
+.massage-card{
+    position:relative;
+    min-height:185px;
+    padding:34px 34px 30px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+
+    background:var(--cream);
+    border:1px solid rgba(159,41,48,.28);
+
+    overflow:hidden;
+}
+
+.massage-card-line{
+    position:absolute;
+    top:0;
+    left:0;
+
+    width:100%;
+    height:4px;
+
+    background:var(--orange);
+}
+
+.massage-card h3{
+    font-family:"Aboreto","Trebuchet MS",serif;
+    font-size:clamp(19px,1.6vw,25px);
+    line-height:1.5;
+    font-weight:400;
+
+    color:var(--text);
+    text-shadow:.7px 0 currentColor;
+}
+
+.massage-card-content{
+    text-align:center;
+}
+
+.massage-card-content p{
+    max-width:390px;
+    margin:18px auto 0;
+    font-size:14px;
+    line-height:1.7;
+    color:var(--muted);
+}
+
+/* ================================
+   DÁRKOVÉ POUKAZY
+================================ */
+
+.vouchers{
+    padding:100px 5%;
+    background:var(--cream);
+    scroll-margin-top:82px;
+}
+
+.vouchers-inner{
+    width:min(1250px,100%);
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:1fr .9fr;
+    gap:100px;
+    align-items:center;
+}
+
+
+/* TEXT */
+
+.vouchers-label{
+    margin-bottom:18px;
+
+    color:var(--wine);
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+}
+
+.vouchers-content h2{
+    font-family:"Aboreto","Trebuchet MS",serif;
+    font-size:clamp(38px,4vw,58px);
+    line-height:1.25;
+    font-weight:400;
+
+    color:var(--text);
+    text-shadow:.5px 0 currentColor;
+}
+
+.vouchers-content h2 span{
+    color:var(--wine);
+}
+
+.vouchers-lead{
+    max-width:560px;
+    margin-top:30px;
+
+    font-size:18px;
+    line-height:1.75;
+    color:var(--text);
+}
+
+.vouchers-text{
+    max-width:560px;
+    margin-top:20px;
+
+    font-size:15px;
+    line-height:1.8;
+    color:var(--muted);
+}
+
+
+/* TLAČÍTKO */
+
+.voucher-button{
+    display:inline-block;
+    margin-top:32px;
+    padding:16px 27px;
+
+    background:var(--wine);
+    color:#fff;
+
+    font-size:12px;
+    font-weight:600;
+    letter-spacing:.13em;
+    text-transform:uppercase;
+    text-decoration:none;
+
+    transition:background .25s ease;
+}
+
+.voucher-button:hover{
+    background:var(--wine-dark);
+}
+
+
+/* FOTKA */
+
+.vouchers-image{
+    position:relative;
+    width:100%;
+    max-width:520px;
+    justify-self:end;
+}
+
+.vouchers-image img{
+    position:relative;
+    z-index:2;
+
+    display:block;
+    width:100%;
+    height:auto;
+}
+
+.vouchers-image-frame{
+    position:absolute;
+    z-index:1;
+
+    top:16px;
+    left:16px;
+    width:100%;
+    height:100%;
+
+    border:1px solid var(--orange);
+}
+
+/* ================================
+   O MNĚ
+================================ */
+
+.about{
+    padding:110px 5%;
+    background:var(--cream-dark);
+    scroll-margin-top:82px;
+}
+
+.about-inner{
+    width:min(1250px,100%);
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:.78fr 1.22fr;
+    gap:100px;
+    align-items:center;
+}
+
+
+/* FOTKA */
+
+.about-photo{
+    position:relative;
+    width:100%;
+    max-width:430px;
+}
+
+.about-photo img{
+    position:relative;
+    z-index:2;
+
+    display:block;
+    width:100%;
+    height:auto;
+}
+
+.about-photo-frame{
+    position:absolute;
+    z-index:1;
+
+    top:18px;
+    left:-18px;
+
+    width:100%;
+    height:100%;
+
+    border:1px solid var(--orange);
+}
+
+
+/* TEXT */
+
+.about-label{
+    margin-bottom:18px;
+
+    color:var(--wine);
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+}
+
+.about-content h2{
+    margin:0 0 38px;
+
+    font-family:"Aboreto","Trebuchet MS",serif;
+    font-size:clamp(38px,4vw,56px);
+    line-height:1.2;
+    font-weight:400;
+
+    color:var(--text);
+    text-shadow:.5px 0 currentColor;
+}
+
+.about-content h2 span{
+    color:var(--wine);
+}
+
+.about-text{
+    max-width:700px;
+}
+
+.about-text p{
+    margin:0 0 20px;
+
+    font-size:15px;
+    line-height:1.85;
+    color:#2f2523;
+}
+
+.about-text p:last-child{
+    margin-bottom:0;
+}
+
+
+/* ZÁVĚREČNÁ VĚTA */
+
+.about-quote{
+    max-width:700px;
+    margin-top:38px;
+    padding:25px 0 0 26px;
+
+    border-top:1px solid var(--line);
+    border-left:3px solid var(--orange);
+
+    font-family:"Aboreto","Trebuchet MS",serif;
+    font-size:clamp(20px,1.8vw,27px);
+    line-height:1.55;
+
+    color:var(--wine-dark);
+    text-shadow:.35px 0 currentColor;
+}
+
+/* ================================
+   KONTAKT
+================================ */
+
+.contact{
+    padding:105px 5% 95px;
+    background:var(--wine-dark);
+    color:var(--cream);
+    scroll-margin-top:82px;
+}
+
+.contact-inner{
+    width:min(1250px,100%);
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:.9fr 1.1fr;
+    gap:120px;
+    align-items:start;
+}
+
+
+/* LEVÁ ČÁST */
+
+.contact-label,
+.contact-form-label{
+    margin-bottom:18px;
+
+    color:var(--orange);
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:.22em;
+    text-transform:uppercase;
+}
+
+.contact-info h2{
+    margin-bottom:45px;
+
+    font-family:"Aboreto","Trebuchet MS",serif;
+    font-size:clamp(35px,3.5vw,52px);
+    line-height:1.3;
+    font-weight:400;
+
+    color:var(--cream);
+    text-shadow:.5px 0 currentColor;
+}
+
+.contact-info h2 span{
+    color:var(--orange);
+}
+
+
+/* KONTAKTNÍ ÚDAJE */
+
+.contact-details{
+    max-width:520px;
+}
+
+.contact-item{
+    padding:16px 0;
+
+    display:grid;
+    grid-template-columns:105px 1fr;
+    gap:20px;
+
+    border-bottom:1px solid rgba(255,248,241,.18);
+}
+
+.contact-item:first-child{
+    border-top:1px solid rgba(255,248,241,.18);
+}
+
+.contact-item span{
+    color:var(--orange);
+
+    font-size:10px;
+    font-weight:600;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+}
+
+.contact-item a{
+    color:var(--cream);
+    text-decoration:none;
+
+    font-size:15px;
+    line-height:1.5;
+
+    transition:opacity .2s ease;
+}
+
+.contact-item a:hover{
+    opacity:.7;
+}
+
+
+/* FOTKA + MAPA */
+
+.contact-place{
+    max-width:520px;
+    margin-top:35px;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+}
+
+.contact-place-photo,
+.contact-map{
+    text-decoration:none;
+}
+
+.contact-place-photo img{
+    display:block;
+    width:100%;
+    height:105px;
+    object-fit:cover;
+}
+
+.contact-place-photo > span{
+    display:block;
+    margin-top:9px;
+
+    color:var(--cream);
+    font-size:12px;
+}
+
+.contact-map-placeholder{
+    height:105px;
+    padding:18px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
+    border:1px solid rgba(237,156,62,.65);
+
+    color:var(--cream);
+    transition:
+    background .25s ease,
+    border-color .25s ease;
+}
+
+.contact-map:hover .contact-map-placeholder{
+    background:rgba(237,156,62,.08);
+    border-color:var(--orange);
+}
+
+.contact-map-placeholder strong{
+    font-family:"Aboreto","Trebuchet MS",serif;
+    font-size:15px;
+    font-weight:400;
+}
+
+.contact-map-placeholder span{
+    margin-top:3px;
+    font-size:13px;
+    color:rgba(255,248,241,.7);
+}
+
+.contact-map-placeholder small{
+    margin-top:12px;
+
+    color:var(--orange);
+    font-size:11px;
+    font-weight:600;
+}
+
+
+/* FORMULÁŘ */
+
+.contact-form-wrap{
+    padding:48px 55px 52px;
+
+    border:1px solid rgba(255,248,241,.22);
+}
+
+.contact-form-wrap h3{
+    margin-bottom:38px;
+
+    font-family:"Aboreto","Trebuchet MS",serif;
+    font-size:clamp(27px,2.5vw,37px);
+    line-height:1.4;
+    font-weight:400;
+
+    color:var(--cream);
+    text-shadow:.4px 0 currentColor;
+}
+
+.form-field{
+    margin-bottom:25px;
+}
+
+.form-field label{
+    display:block;
+    margin-bottom:9px;
+
+    color:rgba(255,248,241,.72);
+
+    font-size:10px;
+    font-weight:600;
+    letter-spacing:.15em;
+    text-transform:uppercase;
+}
+
+.form-field input,
+.form-field textarea{
+    width:100%;
+    padding:12px 0;
+
+    border:0;
+    border-bottom:1px solid rgba(255,248,241,.38);
+    border-radius:0;
+    outline:none;
+
+    background:transparent;
+    color:var(--cream);
+
+    font-family:"Figtree",system-ui,sans-serif;
+    font-size:15px;
+}
+
+.form-field textarea{
+    resize:none;
+}
+
+.form-field input:focus,
+.form-field textarea:focus{
+    border-bottom-color:var(--orange);
+}
+
+/* CHROME AUTOFILL */
+.form-field input:-webkit-autofill,
+.form-field input:-webkit-autofill:hover,
+.form-field input:-webkit-autofill:focus,
+.form-field textarea:-webkit-autofill,
+.form-field textarea:-webkit-autofill:hover,
+.form-field textarea:-webkit-autofill:focus{
+    -webkit-text-fill-color:var(--cream);
+    -webkit-box-shadow:0 0 0 1000px var(--wine-dark) inset;
+    box-shadow:0 0 0 1000px var(--wine-dark) inset;
+    caret-color:var(--cream);
+    border-bottom:1px solid rgba(255,248,241,.38);
+}
+
+
+/* TLAČÍTKO */
+
+.contact-form button{
+    margin-top:10px;
+    padding:16px 27px;
+
+    border:0;
+    background:var(--orange);
+    color:var(--wine-dark);
+
+    cursor:pointer;
+
+    font-family:"Figtree",system-ui,sans-serif;
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    transition:background .25s ease, color .25s ease;
+}
+
+.contact-form button:hover{
+    background:var(--cream);
+    color:var(--wine-dark);
+}
+
+.form-note{
+    max-width:480px;
+    margin:-20px 0 32px;
+
+    color:rgba(255,248,241,.66);
+    font-size:12px;
+    line-height:1.65;
+}
+
+/* ================================
+   FOOTER
+================================ */
+
+.footer{
+    padding:24px 5%;
+    background:#4f151a;
+    border-top:1px solid rgba(255,248,241,.12);
+}
+
+.footer-inner{
+    width:min(1250px,100%);
+    margin:auto;
+
+    text-align:center;
+
+    font-size:11px;
+    letter-spacing:.05em;
+    color:rgba(255,248,241,.65);
+}
+
+.footer-inner a{
+    color:inherit;
+    font-weight:inherit;
+    text-decoration:none;
+}
+
+.footer-inner a:hover{
+    color:var(--cream);
+}
+
+
+/* ================================
+   SCROLL ANIMACE
+================================ */
+
+.reveal{
+    opacity:0;
+    transform:translateY(32px);
+    transition:
+        opacity .8s ease,
+        transform .8s cubic-bezier(.22,.61,.36,1);
+}
+
+.reveal.is-visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+
+/* jemnější animace pro menší prvky */
+
+.reveal-soft{
+    opacity:0;
+    transform:translateY(18px);
+    transition:
+        opacity .7s ease,
+        transform .7s ease;
+}
+
+.reveal-soft.is-visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+
+/* časové balíčky postupně */
+
+.time-option.reveal:nth-child(1){
+    transition-delay:0s;
+}
+
+.time-option.reveal:nth-child(2){
+    transition-delay:.10s;
+}
+
+.time-option.reveal:nth-child(3){
+    transition-delay:.20s;
+}
+
+.time-option.reveal:nth-child(4){
+    transition-delay:.30s;
+}
+
+
+/* respektování nastavení omezených animací */
+
+@media(prefers-reduced-motion:reduce){
+    .reveal,
+    .reveal-soft{
+        opacity:1;
+        transform:none;
+        transition:none;
+    }
+
+    .hero img{
+        opacity:1;
+        transform:none;
+        animation:none;
+    }
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+.hamburger{
+    display:none;
+}
+
+@media(max-width:800px){
+
+    header{
+        height:70px;
+    }
+
+    .logo img{
+        width:49px;
+        height:49px;
+    }
+
+    nav{
+        display:none;
+    }
+
+    .hamburger{
+        display:flex;
+        flex-direction:column;
+        gap:6px;
+        border:0;
+        background:none;
+        padding:10px;
+    }
+
+    .hamburger span{
+        display:block;
+        width:25px;
+        height:1px;
+        background:var(--text);
+    }
+
+    .services-track{
+        min-height:57px;
+        animation-duration:27s;
+    }
+
+    .service{
+        font-size:12px;
+    }
+
+    .service::after{
+        margin:0 20px;
+    }
+
+    .intro{
+        padding:80px 22px 90px;
+    }
+
+    .intro h1{
+        font-size:34px;
+        line-height:1.35;
+    }
+
+    .intro p{
+        font-size:14px;
+    }
+
+    .time-care{
+        padding:25px 22px 85px;
+    }
+
+    .time-care-head{
+        margin-bottom:55px;
+    }
+
+    .time-care-head h2{
+        font-size:31px;
+    }
+
+    .time-options{
+        display:block;
+    }
+
+    .time-option{
+        padding:45px 5px 50px;
+        border-left:0;
+        border-top:1px solid var(--line);
+    }
+
+    .time-option:last-child{
+        border-right:0;
+        border-bottom:1px solid var(--line);
+    }
+
+    .time-number{
+        font-size:58px;
+    }
+
+    .time-option h3{
+        min-height:0;
+        font-size:20px;
+    }
+
+    .time-description{
+        min-height:0;
+    }
+
+    .time-care-note{
+        margin-top:55px;
+    }
+
+    .time-care-final{
+        font-size:20px;
+    }
+
+    .care-motto{
+        padding:55px 22px 60px;
+    }
+
+    .care-motto p{
+        font-size:14px;
+    }
+
+    .care-motto div{
+        font-size:24px;
+        line-height:1.55;
+    }
+
+    .care-motto div br{
+        display:none;
+    }
+
+.skin-care{
+    padding:80px 22px 90px;
+    scroll-margin-top:70px;
+}
+
+.skin-care-head{
+    margin-bottom:60px;
+}
+
+.skin-care-head h2{
+    font-size:31px;
+}
+
+.skin-feature{
+    display:block;
+    padding:45px 0;
+}
+
+.skin-feature-title{
+    padding-left:20px;
+    margin-bottom:35px;
+}
+
+.skin-feature-title h3{
+    font-size:27px;
+}
+
+.skin-feature-text p{
+    font-size:14px;
+}
+
+.skin-options{
+    margin-top:60px;
+}
+
+.skin-options-heading h3{
+    font-size:25px;
+}
+
+.skin-options-list{
+    display:block;
+}
+
+.skin-options-list span{
+    display:block;
+    padding:13px 5px;
+}
+
+.skin-options-note{
+    margin-top:30px;
+    font-size:14px;
+}
+.skin-detail{
+    display:block;
+    padding:45px 0;
+}
+
+.skin-detail-heading{
+    padding-left:20px;
+    margin-bottom:30px;
+}
+
+.skin-detail-heading h3{
+    font-size:27px;
+}
+
+.skin-detail-text{
+    font-size:14px;
+}
+
+.skin-detail-content p{
+    font-size:14px;
+}
+
+.massages{
+    padding:70px 22px 80px;
+    scroll-margin-top:70px;
+}
+
+.massages-head{
+    margin-bottom:45px;
+}
+
+.massages-head h2{
+    font-size:31px;
+}
+
+.massages-head p{
+    font-size:14px;
+}
+
+.massage-grid{
+    display:block;
+}
+
+.massage-card{
+    min-height:135px;
+    padding:28px 24px 24px;
+    margin-bottom:14px;
+}
+
+.massage-card h3{
+    font-size:20px;
+}
+
+.massage-card:last-child{
+    margin-bottom:0;
+}
+
+.vouchers{
+    padding:70px 22px 80px;
+    scroll-margin-top:70px;
+}
+
+.vouchers-inner{
+    display:flex;
+    flex-direction:column;
+    gap:50px;
+}
+
+.vouchers-content{
+    width:100%;
+}
+
+.vouchers-content h2{
+    font-size:34px;
+}
+
+.vouchers-lead{
+    margin-top:24px;
+    font-size:16px;
+}
+
+.vouchers-text{
+    font-size:14px;
+}
+
+.vouchers-image{
+    width:calc(100% - 14px);
+    max-width:500px;
+    margin-right:14px;
+    justify-self:auto;
+}
+
+.vouchers-image-frame{
+    top:12px;
+    left:12px;
+}
+
+.about{
+    padding:75px 22px 80px;
+    scroll-margin-top:70px;
+}
+
+.about-inner{
+    display:flex;
+    flex-direction:column;
+    gap:55px;
+}
+
+.about-photo{
+    width:calc(100% - 16px);
+    max-width:430px;
+    margin-left:16px;
+}
+
+.about-photo-frame{
+    top:14px;
+    left:-14px;
+}
+
+.about-content{
+    width:100%;
+}
+
+.about-content h2{
+    margin-bottom:30px;
+    font-size:34px;
+}
+
+.about-text p{
+    font-size:14px;
+    line-height:1.8;
+}
+
+.about-quote{
+    margin-top:32px;
+    padding:22px 0 0 20px;
+    font-size:20px;
+}
+
+.contact{
+    padding:75px 22px 80px;
+    scroll-margin-top:70px;
+}
+
+.contact-inner{
+    display:block;
+}
+
+.contact-info h2{
+    margin-bottom:35px;
+    font-size:33px;
+}
+
+.contact-item{
+    grid-template-columns:85px 1fr;
+    gap:12px;
+}
+
+.contact-item a{
+    font-size:14px;
+    overflow-wrap:anywhere;
+}
+
+.contact-place{
+    margin-top:30px;
+}
+
+.contact-place-photo img,
+.contact-map-placeholder{
+    height:95px;
+}
+
+.contact-form-wrap{
+    margin-top:60px;
+    padding:35px 24px 38px;
+}
+
+.contact-form-wrap h3{
+    margin-bottom:30px;
+    font-size:27px;
+}
+
+.form-note{
+    font-size:11px;
+}
+
+.footer{
+    padding:28px 22px;
+}
+
+.footer-inner{
+    display:flex;
+    flex-direction:column;
+    gap:9px;
+    text-align:center;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+
+<header>
+
+    <div class="header-inner">
+
+
+        <nav>
+    <a href="#">Domů</a>
+    <a href="#sluzby">Péče dle času</a>
+    <a href="#plet">Pleť a tělo</a>
+    <a href="#masaze">Masáže</a>
+    <a href="#poukazy">Poukazy</a>
+    <a href="#o-mne">O mně</a>
+    <a href="#kontakt">Kontakt</a>
+    <a href="#kontakt" class="nav-button">Objednat se</a>
+</nav>
+
+
+        <button class="hamburger" aria-label="Otevřít menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+    </div>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <img
+        src="herocenter.jfif"
+        alt="Ganesha kosmetické studio Trutnov"
+    >
+
+</section>
+
+
+<!-- BĚŽÍCÍ SLUŽBY -->
+
+<div class="services-strip">
+
+    <div class="services-track">
+
+
+        <div class="services-set">
+
+            <span class="service">Kosmetická péče</span>
+            <span class="service">Masáže</span>
+            <span class="service">Přírodní kosmetika</span>
+            <span class="service">Péče o tělo</span>
+            <span class="service">Obočí a řasy</span>
+            <span class="service">Epilace</span>
+            <span class="service">Individuální líčení</span>
+
+        </div>
+
+
+        <!-- kopie kvůli plynulému loopu -->
+
+        <div class="services-set" aria-hidden="true">
+
+            <span class="service">Kosmetická péče</span>
+            <span class="service">Masáže</span>
+            <span class="service">Přírodní kosmetika</span>
+            <span class="service">Péče o tělo</span>
+            <span class="service">Obočí a řasy</span>
+            <span class="service">Epilace</span>
+            <span class="service">Individuální líčení</span>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<section class="intro" id="sluzby">
+
+    <div class="intro-label reveal-soft">
+        Ganesha kosmetické studio · Trutnov
+    </div>
+
+    <h1 class="reveal">
+    Vyberte si, kolik času chcete
+    <br>
+    <span>věnovat sami sobě.</span>
+</h1>
+
+    <p class="reveal">
+        Každá pleť je jiná a každý člověk přichází s jiným přáním, potřebou i množstvím času, který chce své péči věnovat. Proto u mě není potřeba předem vybírat složitý seznam jednotlivých procedur. <strong>Čas je základem. Obsah péče přizpůsobuji tomu, co vaše pleť v danou chvíli potřebuje.</strong> Podle aktuálního stavu pleti, vašich přání a času, společně zvolíme nejvhodnější postup.
+    </p>
+
+<a href="#cas" class="scroll-arrow" aria-label="Pokračovat ke službám">
+        <span></span>
+    </a>
+
+</section>
+
+<!-- KOSMETICKÁ PÉČE PODLE ČASU -->
+
+<section class="time-care" id="cas">
+
+    <div class="time-care-head reveal">
+
+        <div class="time-care-label">
+            Kosmetická péče podle času
+        </div>
+
+        <h2>
+            Vyberte si čas.<br>
+            <span>O zbytek se postarám já.</span>
+        </h2>
+
+        <p>
+            Nemusíte předem vědět, které procedury přesně potřebujete.
+            S delším časem získáváme více prostoru pro další péči,
+            techniky i relaxaci.
+        </p>
+
+    </div>
+
+
+    <div class="time-options">
+
+
+        <!-- 60 MINUT -->
+
+        <article class="time-option reveal">
+
+            <div class="time-number">
+                60
+                <span>minut</span>
+            </div>
+
+            <h3>Základní kosmetická péče</h3>
+
+            <div class="time-price">
+                1 000 Kč
+            </div>
+
+            <p class="time-description">
+                Prostor pro základní, pravidelnou péči a osvěžení pleti.
+            </p>
+
+            <div class="time-includes">
+                Péče zahrnuje
+            </div>
+
+            <ul>
+                <li>očištění pleti</li>
+                <li>diagnostiku</li>
+                <li>peeling</li>
+                <li>kratší masáž obličeje a krku</li>
+                <li>masku</li>
+                <li>úpravu obočí</li>
+            </ul>
+
+        </article>
+
+
+        <!-- 90 MINUT -->
+
+        <article class="time-option reveal">
+
+            <div class="time-number">
+                90
+                <span>minut</span>
+            </div>
+
+            <h3>Komplexní kosmetická péče</h3>
+
+            <div class="time-price">
+                1 300 Kč
+            </div>
+
+            <p class="time-description">
+                Dostatek času pro důkladnější péči o pleť i příjemnou relaxaci.
+            </p>
+
+            <div class="time-includes">
+                Navíc získáváme prostor pro
+            </div>
+
+            <ul>
+                <li>důkladnější nebo ultrazvukové čištění</li>
+                <li>aplikaci aktivního séra</li>
+                <li>masáž obličeje, krku a dekoltu</li>
+                <li>barvení řas nebo obočí</li>
+            </ul>
+
+        </article>
+
+
+        <!-- 120 MINUT -->
+
+        <article class="time-option reveal">
+
+            <div class="time-number">
+                120
+                <span>minut</span>
+            </div>
+
+            <h3>Nadstandardní kosmetická péče</h3>
+
+            <div class="time-price">
+                1 700 Kč
+            </div>
+
+            <p class="time-description">
+                Více času pro intenzivnější péči, kombinaci více technik
+                a hlubší relaxaci.
+            </p>
+
+            <div class="time-includes">
+                Navíc získáváme prostor pro
+            </div>
+
+            <ul>
+                <li>epilaci vybrané oblasti obličeje</li>
+                <li>ultrazvukové čištění</li>
+                <li>regenerační zábal rukou</li>
+                <li>kombinaci více technik podle potřeb pleti</li>
+            </ul>
+
+        </article>
+
+
+        <!-- 150 MINUT -->
+
+        <article class="time-option time-option-luxury reveal">
+
+            <div class="time-number">
+                150
+                <span>minut</span>
+            </div>
+
+            <h3>Luxusní rituál od hlavy až k patě</h3>
+
+            <div class="time-price">
+                2 300 Kč
+            </div>
+
+            <p class="time-description">
+                Dopřejte si čas, kdy se pozornost věnuje nejen vaší pleti,
+                ale celému tělu.
+            </p>
+
+            <div class="time-includes">
+                Rituál může zahrnovat
+            </div>
+
+            <ul>
+                <li>komplexní kosmetická péče</li>
+                <li>péče o ruce a chodidla</li>
+                <li>prostor pro hlubší odpočinek a regeneraci</li>
+                <li>propojení více technik</li>
+
+            </ul>
+
+        </article>
+
+
+    </div>
+
+
+    <div class="time-care-note reveal">
+
+        <p>
+            <strong>Konkrétní průběh péče není pevně daný.
+            Jednotlivé kroky vždy volím podle aktuálního stavu vaší pleti,
+            vašich přání a času, který máme k dispozici.</strong>
+        </p>
+
+        <div class="time-care-final">
+            Tady už není potřeba nikam spěchat.
+        </div>
+
+    </div>
+
+</section>
+
+<!-- MOTTO PÉČE -->
+<section class="care-motto">
+
+    <p class="reveal-soft">
+        Cílem není stihnout co nejvíce úkonů.
+    </p>
+
+    <div class="reveal">
+        Cílem je využít čas, který jste si pro sebe vyhradili,<br>
+        co nejlépe.
+    </div>
+
+</section>
+
+<!-- PÉČE O PLEŤ -->
+
+<section class="skin-care" id="plet">
+
+    <div class="skin-care-head reveal">
+        <div class="skin-care-label">Péče o pleť</div>
+
+        <h2>
+            Péče, která se<br>
+            <span>přizpůsobuje vám</span>
+        </h2>
+
+    </div>
+
+
+    <!-- ENZYMATICKÁ KÚRA -->
+
+    <div class="skin-feature reveal">
+
+        <div class="skin-feature-title">
+            <span>Speciální péče o pleť</span>
+
+            <h3>
+                Enzymatická kúra<br>
+                se třemi séry
+            </h3>
+        </div>
+
+        <div class="skin-feature-text">
+            <p>
+                Speciální péče pro pleť, která potřebuje osvěžit, vyhladit
+                a podpořit její přirozený vzhled. Enzymatická kúra je propojena
+                s aplikací tří po sobě následujících sér, která péči postupně
+                doplňují. Pleť působí po ošetření svěžeji a odpočatěji.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- DALŠÍ MOŽNOSTI -->
+
+    <div class="skin-options reveal">
+
+    <div class="skin-options-heading">
+        <span>Podle aktuálního stavu pleti</span>
+
+        <h3>
+            Další možnosti<br>
+            péče o pleť
+        </h3>
+    </div>
+
+    <div class="skin-options-content">
+
+        <div class="skin-options-text">
+    Povrchové a hloubkové čištění
+    <span>•</span>
+    Ultrazvukové čištění
+    <span>•</span>
+    Peelingy
+    <span>•</span>
+    Enzymatická péče
+    <span>•</span>
+    Peeling s lávovou zemí
+    <span>•</span>
+    Výživná, hydratační a zpevňující séra
+    <span>•</span>
+    Masky různého působení
+    <span>•</span>
+    Závěrečná péče
+    <span>•</span>
+    Epilace
+</div>
+
+        <p>
+            Tyto jednotlivé postupy nevnímám jako oddělené služby,
+            ale jako možnosti, které mohu podle potřeby vzájemně kombinovat.
+        </p>
+
+    </div>
+
+</div>
+
+    </div>
+
+
+<!-- ŘASY A OBOČÍ -->
+
+<div class="skin-detail reveal">
+
+    <div class="skin-detail-heading">
+        <span>Řasy a obočí</span>
+
+        <h3>
+            Úprava řas<br>
+            a obočí
+        </h3>
+    </div>
+
+    <div class="skin-detail-content">
+
+        <div class="skin-detail-text">
+            Barvení řas
+            <span>•</span>
+            Barvení obočí
+            <span>•</span>
+            Korekce a tvarování obočí
+        </div>
+
+        <p>
+            Úpravu řas a obočí lze nabídnout samostatně nebo ji podle
+            časových možností zařadit do komplexního kosmetického ošetření.
+        </p>
+
+    </div>
+
+    </div>
+
+<!-- INDIVIDUÁLNÍ VÝUKA LÍČENÍ -->
+<div class="skin-detail reveal">
+    <div class="skin-detail-heading">
+        <span>Denní a večerní líčení</span>
+        <h3>Individuální<br>výuka líčení</h3>
+    </div>
+
+    <div class="skin-detail-content makeup-content">
+        <p>
+            Chcete se naučit líčit tak, aby vám líčení bylo přirozené,
+            slušelo vám a zvládla jste ho sama? Při individuální lekci
+            společně projdeme postup, který odpovídá vašim zkušenostem,
+            vašemu stylu a tomu, co chcete sama zvládnout. Můžeme se zaměřit
+            na přirozené denní líčení nebo výraznější večerní variantu.
+            Ukážu vám jednotlivé kroky a společně si je vyzkoušíme tak,
+            abyste je později dokázala sama zopakovat doma.
+        </p>
+    </div>
+</div>
+
+<div class="skin-detail reveal">
+    <div class="skin-detail-heading">
+        <span>Péče o tělo</span>
+        <h3>Tělový regenerační<br>zábal</h3>
+    </div>
+
+    <div class="skin-detail-content body-wrap-content">
+        <p>
+            Péče zaměřená především na nohy a hýždě, vhodná pro pokožku
+            se sklonem k nerovnostem a ztrátě pevnosti. Zábal je spojen
+            s příjemnou péčí o pokožku a může být doplněn krátkou masáží.
+        </p>
+
+    </div>
+</div>
+
+</div>
+
+</section>
+
+<!-- MASÁŽE -->
+
+<section class="massages" id="masaze">
+
+    <div class="massages-head reveal">
+        <div class="massages-label">Masáže a relaxace</div>
+
+        <h2>
+            Čas pro <span>uvolnění</span>
+        </h2>
+
+        <p>
+            Masáž lze absolvovat samostatně nebo ji podle potřeby
+            propojit s další péčí.
+        </p>
+    </div>
+
+
+    <div class="massage-grid">
+
+        <article class="massage-card reveal">
+    <div class="massage-card-line"></div>
+
+    <div class="massage-card-content">
+        <h3>
+            Masáž s využitím<br>
+            hladiny alfa
+        </h3>
+
+        <p>
+            Relaxační péče využívající klidného tempa, doteku
+            a masážních technik.
+        </p>
+    </div>
+</article>
+
+
+        <article class="massage-card reveal">
+    <div class="massage-card-line"></div>
+
+    <div class="massage-card-content">
+        <h3>
+            Terapeutické ošetření pomocí<br>
+            energetické aromaterapie
+        </h3>
+
+        <p>
+            Propojení doteku, masáže a pečlivě volené vonné kompozice.
+        </p>
+    </div>
+</article>
+
+
+        <article class="massage-card reveal">
+    <div class="massage-card-line"></div>
+
+    <div class="massage-card-content">
+        <h3>
+            Liftingová masáž<br>
+            s lávovými kameny
+        </h3>
+
+        <p>
+            Masážní péče zaměřená na uvolnění, prohřátí a povzbuzení pokožky.
+        </p>
+    </div>
+</article>
+
+
+        <article class="massage-card reveal">
+    <div class="massage-card-line"></div>
+
+    <div class="massage-card-content">
+        <h3>
+            Masáž s aktivací<br>
+            reflexních zón
+        </h3>
+
+        <p>
+            Péče využívající princip práce s reflexními zónami a cíleným dotekem.
+        </p>
+    </div>
+</article>
+
+        <article class="massage-card reveal">
+    <div class="massage-card-line"></div>
+
+    <div class="massage-card-content">
+        <h3>
+            Antistresová masáž<br>
+            hlavy, šíje a zad
+        </h3>
+
+        <p>
+            Uvolňující masáž zaměřená na oblast hlavy, šíje a zad.
+        </p>
+    </div>
+</article>
+
+    </div>
+
+</section>
+
+<!-- ================================
+     DÁRKOVÉ POUKAZY
+================================= -->
+
+<section class="vouchers" id="poukazy">
+
+    <div class="vouchers-inner">
+
+        <div class="vouchers-content reveal">
+
+            <div class="vouchers-label">Dárkové poukazy</div>
+
+            <h2>
+                Darujte čas<br>
+                <span>pro sebe.</span>
+            </h2>
+
+            <p class="vouchers-lead">
+                Stačí vybrat čas a svěřit se do péče zkušené kosmetičky.
+            </p>
+
+            <p class="vouchers-text">
+                Nejsem zastáncem jednoho univerzálního postupu pro všechny.
+                Každá návštěva může být jedinečná.
+            </p>
+
+            <a href="#kontakt" class="voucher-button">
+                Mám zájem o poukaz
+            </a>
+
+        </div>
+
+
+        <div class="vouchers-image reveal-soft">
+            <div class="vouchers-image-frame"></div>
+
+            <img
+                src="poukazy.png"
+                alt="Dárkové poukazy Ganesha kosmetické studio"
+            >
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================================
+     O MNĚ
+================================= -->
+
+<section class="about" id="o-mne">
+
+    <div class="about-inner">
+
+        <div class="about-photo reveal-soft">
+            <div class="about-photo-frame"></div>
+
+            <img
+                src="mirka.jpg"
+                alt="Mirka Fiebingerová"
+            >
+        </div>
+
+
+        <div class="about-content reveal">
+
+            <div class="about-label">O mně</div>
+
+            <h2>Mirka<br><span>Fiebingerová</span></h2>
+
+            <div class="about-text">
+
+                <p>
+                    Kosmetické péči se věnuji dlouhodobě a svou práci stavím na <strong>přirozenosti, individuálním přístupu a osobní zkušenosti.</strong> Za dobu své praxe jsem si vytvořila vlastní způsob práce, ve kterém propojuji <strong>kosmetickou péči, masáž, dotek, vůně a kvalitní přírodní kosmetiku.</strong>
+                </p>
+
+                <p>
+                    Přírodní péče pro mě znamená přirozenou a samozřejmou profesní cestu, která mi dává smysl.
+                </p>
+
+                <p>
+                    <strong>Každého člověka vnímám jako jedinečnou osobnost.</strong> Stejně tak vnímám i jeho pleť – její aktuální stav, potřeby i to, co jí v danou chvíli prospívá. Nechci, aby si klientka musela sama určovat, jaké všechny procedury potřebuje. Přichází za mnou s důvěrou a já <strong>podle situace volím jednotlivé kroky péče.</strong>
+                </p>
+
+            </div>
+
+            <div class="about-quote">
+                Vy si určíte čas. Já se postarám o to, aby byl využitý co nejlépe.
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================================
+     KONTAKT
+================================= -->
+
+<section class="contact" id="kontakt">
+
+    <div class="contact-inner">
+
+        <!-- LEVÁ ČÁST -->
+        <div class="contact-info reveal">
+
+            <div class="contact-label">Kontakt</div>
+
+            <h2>
+                Těším se<br>
+                <span>na vaši návštěvu</span>
+            </h2>
+
+            <div class="contact-details">
+
+                <div class="contact-item">
+                    <span>Adresa</span>
+                    <a href="https://www.google.com/maps/search/?api=1&query=Pra%C5%BEsk%C3%A1+89%2C+541+01+Trutnov"
+                       target="_blank"
+                       rel="noopener">
+                        Pražská 89, 541 01 Trutnov
+                    </a>
+                </div>
+
+                <div class="contact-item">
+                    <span>Telefon</span>
+                    <a href="tel:+420737760799">
+                        +420 737 760 799
+                    </a>
+                </div>
+
+                <div class="contact-item">
+                    <span>E-mail</span>
+                    <a href="mailto:ganeshastudiotrutnov@seznam.cz">
+                        ganeshastudiotrutnov@seznam.cz
+                    </a>
+                </div>
+
+                <div class="contact-item">
+                    <span>Facebook</span>
+                    <a href="https://www.facebook.com/ganeshastudiotrutnov?locale=cs_CZ"
+                       target="_blank"
+                       rel="noopener">
+                        Ganesha kosmetické studio
+                    </a>
+                </div>
+
+            </div>
+
+
+            <!-- MALÉ FOTO + MAPA -->
+
+            <div class="contact-place">
+
+                <div class="contact-place-photo">
+    <img src="outside.jpg" alt="Okolí Ganesha kosmetického studia v Trutnově">
+
+</div>
+
+
+                <a class="contact-map"
+                   href="https://www.google.com/maps/search/?api=1&query=Pra%C5%BEsk%C3%A1+89%2C+541+01+Trutnov"
+                   target="_blank"
+                   rel="noopener">
+
+                    <div class="contact-map-placeholder">
+                        <strong>Pražská 89</strong>
+                        <span>Trutnov</span>
+                        <small>Zobrazit na mapě →</small>
+                    </div>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- FORMULÁŘ -->
+
+        <div class="contact-form-wrap reveal">
+
+            <div class="contact-form-label">Napište mi</div>
+
+            <h3>Domluvte si svůj čas.</h3>
+
+<p class="form-note">
+    Odesláním zprávy nevzniká závazná rezervace. Nejdříve se Vám ozvu.
+</p>
+
+<form class="contact-form">
+
+                <div class="form-field">
+                    <label for="name">Jméno</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+
+                <div class="form-field">
+    <label for="phone">Telefon</label>
+    <input type="tel" id="phone" name="phone" required>
+</div>
+
+                <div class="form-field">
+                    <label for="message">Zpráva</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                </div>
+
+                <button type="submit">
+                    Odeslat zprávu
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer class="footer">
+    <div class="footer-inner">
+        © 2026 Ganesha kosmetické studio · Miroslava Fiebingerová · IČO: 65698924 · Designed by
+        <a href="https://zajait.cz/" target="_blank" rel="noopener">ZajaIT</a>
+    </div>
+</footer>
+
+<script>
+const revealElements = document.querySelectorAll('.reveal, .reveal-soft');
+
+const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+        }
+    });
+}, {
+    threshold:0.12
+});
+
+revealElements.forEach(element => {
+    revealObserver.observe(element);
+});
+</script>
+
+</body>
+</html>
